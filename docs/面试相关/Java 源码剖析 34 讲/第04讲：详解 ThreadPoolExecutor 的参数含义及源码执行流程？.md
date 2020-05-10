@@ -322,9 +322,61 @@ ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 3, 10, TimeUnit.SECONDS,
 
 可以看出线程池执行了自定义的拒绝策略，我们可以在 rejectedExecution 中添加自己业务处理的代码。
 
-ThreadPoolExecutor 扩展
+### ThreadPoolExecutor 扩展
 
 ThreadPoolExecutor 的扩展主要是通过重写它的 beforeExecute() 和 afterExecute() 方法实现的，我们可以在扩展方法中添加日志或者实现数据统计，比如统计线程的执行时间，如下代码所示：
+
+```java
+public class ThreadPoolExtend {
+    public static void main(String[] args) {
+        // 线程池扩展调用
+        MyThreadPoolExecutor executor = new MyThreadPoolExecutor(2, 4, 10,TimeUnit.SECONDS, new LinkedBlockingQueue());
+        for(int i=0;i<3;i++){
+            executor.execute(() -> {
+                Thread.currentThread().getName();
+            });
+        }
+    }
+
+    static class MyThreadPoolExecutor extends ThreadPoolExecutor {
+        // 保存线程执行开始时间
+        private final ThreadLocal<Long> localTime = new ThreadLocal<>();
+
+        public MyThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnable> workQueue) {
+            super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue);
+        }
+
+        /**
+         * 开始执行之前
+         *
+         * @param t 线程
+         * @param r 任务
+         */
+        @Override
+        protected void beforeExecute(Thread t, Runnable r) {
+            Long sTime = System.nanoTime(); // 开始时间 (单位：纳秒)
+            localTime.set(sTime);
+            System.out.println(String.format("%s | before | time=%s", t.getName(), sTime));
+            super.beforeExecute(t, r);
+        }
+
+        /**
+         * 执行完成之后
+         *
+         * @param r 任务
+         * @param t 抛出的异常
+         */
+        @Override
+        protected void afterExecute(Runnable r, Throwable t) {
+            Long eTime = System.nanoTime(); // 开始时间 (单位：纳秒)
+            Long totalTime = eTime - localTime.get(); // 执行总时间
+
+            System.out.println(String.format("%s | after | time=%s | 耗时：%s 毫秒", Thread.currentThread().getName(), eTime, totalTime/1000000.0));
+            super.afterExecute(r, t);
+        }
+    }
+}
+```
 
 以上程序的执行结果如下所示：
 
