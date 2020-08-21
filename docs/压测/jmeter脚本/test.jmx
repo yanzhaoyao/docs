@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="自定义寄语" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">utf-8</stringProp>
+          <stringProp name="filename">/Users/xmly/Documents/docs/docs/压测/jmeter脚本/test.txt</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">code</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;type&quot;: 103,&#xd;
+    &quot;businessId&quot;: &quot;fa8970b3fb125a1d1f86da1e58c72c7b&quot;,&#xd;
+    &quot;context&quot;: &quot;祝你平安，送你一份大礼!&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">3707</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/business-self-share-mobile/share/sponsor</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+            <stringProp name="JSON_PATH"></stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">true</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="true">
+          <collectionProp name="CookieManager.cookies">
+            <elementProp name="4_token&#x9;" elementType="Cookie" testname="4_token&#x9;">
+              <stringProp name="Cookie.value">30e5f24a98a540ada546a4a68d49bdad	</stringProp>
+              <stringProp name="Cookie.domain">.ximalaya.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="4&amp;_token" elementType="Cookie" testname="4&amp;_token">
+              <stringProp name="Cookie.value">311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB	</stringProp>
+              <stringProp name="Cookie.domain">.ximalaya.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">cookie: _xmLog=xm_1560752130569_jwzzird588cfhe; 4&amp;_wws_token=202584&amp;eyJhbGciOiJIUzI1NiJ9.eyJyZWFsTmFtZSI6IuayiOaAnSIsInVpZCI6IjIwMjU4NCIsImlwIjoiMTkyLjE2OC4xNDMuMTEiLCJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xNF80KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzUuMC4zNzcwLjEwMCBTYWZhcmkvNTM3LjM2IiwidXNlcklkIjoxLCJleHAiOjE1NjIxNDY1ODh9.TqVDqrgmfRghh6Hciay1skwepI5JmyClLhjlRU9f2qo; 4&amp;_wws_cps_token=202584&amp;eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUmVmIjoie1widWlkXCI6MjAyNTg0LFwidU5hbWVcIjpcIjE4NjE1ODdobnFxXCIsXCJ1c2VySWRcIjoxMCxcInJlYWxOYW1lXCI6XCLpkp_mtanmupBcIixcInVzZXJIZWFkXCI6XCJodHRwOi8vZmRmcy54bWNkbi5jb20vZ3JvdXA1Ny9NMDUvMDMvRjkvd0tnTGdWeDJVQ3VSTl9Ra0FBQUpydElnLTBZMDQ0LnBuZ1wiLFwicm9sZVR5cGVcIjpcIklOTkVSXCIsXCJhZGRyZXNzXCI6bnVsbCxcImZvcmJpZGRlblwiOmZhbHNlLFwic2NlbmVzXCI6bnVsbCxcImFnZW50VHlwZVwiOm51bGwsXCJvcmdJZFwiOm51bGwsXCJhZ2VudExldmVsXCI6bnVsbCxcImFnZW50TW9kZVwiOm51bGwsXCJsZWF2ZVwiOmZhbHNlLFwic3VwZXJBZG1pblwiOnRydWV9Iiwic2lkIjoiNTA3MjYzMmEtZjYxOC00MGI0LWE0YmItYTIzZDFlMDk5NTU5IiwiZXhwIjoxNTYyNzYxMDg4fQ.3ZD58vOjAKEwsHw_O_-M5PHfW912HyjLVOkvc_sADNY; login_from=qq; _ga=GA1.2.2132226241.1564560110; 1&amp;remember_me=y; 4_token=30e5f24a98a540ada546a4a68d49bdad; _ati=3010660252847; mp_eSpCz4lYpMYgtuhdH0F6Wgtt_mixpanel=%7B%22distinct_id%22%3A%20%2216ec0b091913cc-0290a3160376c-3964720e-13c680-16ec0b09192dd2%22%2C%22userKey%22%3A%20%225cd0e784be825b2b3fb6922d%22%2C%22created_at%22%3A%20%222019-05-07T02%3A03%3A48.023Z%22%2C%22userLanguage%22%3A%20%22zh%22%2C%22env%22%3A%20%22%22%2C%22version%22%3A%20%221.14.0%22%2C%22daysSinceRegistered%22%3A%20209%2C%22timezone%22%3A%208%2C%22%24os_version%22%3A%20%22Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_1%22%2C%22%24initial_referrer%22%3A%20%22http%3A%2F%2Fteambition.ximalaya.com%2Forganization%2F5ddbe348315c470001b21acd%22%2C%22%24initial_referring_domain%22%3A%20%22teambition.ximalaya.com%22%7D; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22170bcfa093850e-0ac1269b415407-396f7406-1296000-170bcfa0939b12%22%2C%22%24device_id%22%3A%22170bcfa093850e-0ac1269b415407-396f7406-1296000-170bcfa0939b12%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%7D; device_id=xm_1587538988435_k9azq36byhg80k; referral=%7B%22domain%22%3A%22teambition.ximalaya.com%22%2C%22path%22%3A%22%2Flogin%22%2C%22query%22%3A%22%3FappName%3DThoughts%26app_id%3D593770ff839632002e0358f1%26client_id%3D348c89c0-d676-11e7-9a28-f5188e3e8e62%26ref%22%2C%22hash%22%3A%22%22%7D; teambition_private_sid=eyJhdXRoVXBkYXRlZCI6MTU4OTE2MzMyNjc4MSwibG9naW5Gcm9tIjoidGVhbWJpdGlvbiIsInVpZCI6IjVjZDBlNzg0YmU4MjViMmIzZmI2OTIyZCIsInVzZXIiOnsiX2lkIjoiNWNkMGU3ODRiZTgyNWIyYjNmYjY5MjJkIiwibmFtZSI6IueHleWFhuiAgCIsImVtYWlsIjoiemhhb3lhby55YW5AeGltYWxheWEuY29tIiwiYXZhdGFyVXJsIjoiaHR0cDovL3RlYW1iaXRpb25maWxlLnhpbWFsYXlhLmNvbS90aHVtYm5haWwvMDExZ2E4YmViMTFmYTM1MDk1ZmJkNjNiOTJhNzUyMjRjMGJlL3cvMTAwL2gvMTAwIiwicmVnaW9uIjoiY24iLCJsYW5nIjoiIiwiaXNSb2JvdCI6ZmFsc2UsIm9wZW5JZCI6IiIsInBob25lRm9yTG9naW4iOiIifX0=; teambition_private_sid.sig=twaa4gcPOiOxenBwKDI6dRChiCw; 6&amp;remember_me=y; 6&amp;_token=45996&amp;D6E8744C237D47A884BBBB25A5E060AANdV316B4878A8E89F2A7B8A48A6FFBA502989159F148FD0CD074113D68C457088DA; 1&amp;_token=198122617&amp;C836D97A0B664E2A8E92FF65A7A3C24ANdV5DFD7014D2FC4B7E3A6D57DB870697E10B8570306FBAF129655D990BD2373793; s&amp;e=b03268eb590e059f9ecdb5902032b0c3; trackType=web; Hm_lvt_4a7d8ec50cfd6af753c4f8aee3425070=1589531041,1590122484,1590633369; fds_otp=6643535607046838463; 4&amp;remember_me=y; 4&amp;_token=311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB; 4_l_flag=311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB_2020-05-2916:27:41; login_type=password_mobile; s&amp;a=%1C[XUT[%1E%05OR_%06^VB%09C%0E%08%07%08VBSL[XU%08S%1CTV[CSBTWRM%5CZOWXC; Hm_lpvt_4a7d8ec50cfd6af753c4f8aee3425070=1590740864; x_xmly_traffic=utm_source%3A%26utm_medium%3A%26utm_campaign%3A%26utm_content%3A%26utm_term%3A%26utm_from%3A </stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格查看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="汇总图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">utf-8</stringProp>
+          <stringProp name="filename">/Users/xmly/Documents/docs/docs/压测/jmeter脚本/test.txt</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">code</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.port">3707</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/business-self-share-mobile/share/sponsor/103/311850/30dacae175bf406d9d926655aa9a0adffa8970b3fb125a1d1f86da1e58c72c7b</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
+            <stringProp name="JSON_PATH"></stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">true</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie管理器" enabled="true">
+          <collectionProp name="CookieManager.cookies">
+            <elementProp name="4_token&#x9;" elementType="Cookie" testname="4_token&#x9;">
+              <stringProp name="Cookie.value">30e5f24a98a540ada546a4a68d49bdad	</stringProp>
+              <stringProp name="Cookie.domain">.ximalaya.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+            <elementProp name="4&amp;_token" elementType="Cookie" testname="4&amp;_token">
+              <stringProp name="Cookie.value">311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB	</stringProp>
+              <stringProp name="Cookie.domain">.ximalaya.com</stringProp>
+              <stringProp name="Cookie.path">/</stringProp>
+              <boolProp name="Cookie.secure">false</boolProp>
+              <longProp name="Cookie.expires">0</longProp>
+              <boolProp name="Cookie.path_specified">true</boolProp>
+              <boolProp name="Cookie.domain_specified">true</boolProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">cookie: _xmLog=xm_1560752130569_jwzzird588cfhe; 4&amp;_wws_token=202584&amp;eyJhbGciOiJIUzI1NiJ9.eyJyZWFsTmFtZSI6IuayiOaAnSIsInVpZCI6IjIwMjU4NCIsImlwIjoiMTkyLjE2OC4xNDMuMTEiLCJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xNF80KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNzUuMC4zNzcwLjEwMCBTYWZhcmkvNTM3LjM2IiwidXNlcklkIjoxLCJleHAiOjE1NjIxNDY1ODh9.TqVDqrgmfRghh6Hciay1skwepI5JmyClLhjlRU9f2qo; 4&amp;_wws_cps_token=202584&amp;eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUmVmIjoie1widWlkXCI6MjAyNTg0LFwidU5hbWVcIjpcIjE4NjE1ODdobnFxXCIsXCJ1c2VySWRcIjoxMCxcInJlYWxOYW1lXCI6XCLpkp_mtanmupBcIixcInVzZXJIZWFkXCI6XCJodHRwOi8vZmRmcy54bWNkbi5jb20vZ3JvdXA1Ny9NMDUvMDMvRjkvd0tnTGdWeDJVQ3VSTl9Ra0FBQUpydElnLTBZMDQ0LnBuZ1wiLFwicm9sZVR5cGVcIjpcIklOTkVSXCIsXCJhZGRyZXNzXCI6bnVsbCxcImZvcmJpZGRlblwiOmZhbHNlLFwic2NlbmVzXCI6bnVsbCxcImFnZW50VHlwZVwiOm51bGwsXCJvcmdJZFwiOm51bGwsXCJhZ2VudExldmVsXCI6bnVsbCxcImFnZW50TW9kZVwiOm51bGwsXCJsZWF2ZVwiOmZhbHNlLFwic3VwZXJBZG1pblwiOnRydWV9Iiwic2lkIjoiNTA3MjYzMmEtZjYxOC00MGI0LWE0YmItYTIzZDFlMDk5NTU5IiwiZXhwIjoxNTYyNzYxMDg4fQ.3ZD58vOjAKEwsHw_O_-M5PHfW912HyjLVOkvc_sADNY; login_from=qq; _ga=GA1.2.2132226241.1564560110; 1&amp;remember_me=y; 4_token=30e5f24a98a540ada546a4a68d49bdad; _ati=3010660252847; mp_eSpCz4lYpMYgtuhdH0F6Wgtt_mixpanel=%7B%22distinct_id%22%3A%20%2216ec0b091913cc-0290a3160376c-3964720e-13c680-16ec0b09192dd2%22%2C%22userKey%22%3A%20%225cd0e784be825b2b3fb6922d%22%2C%22created_at%22%3A%20%222019-05-07T02%3A03%3A48.023Z%22%2C%22userLanguage%22%3A%20%22zh%22%2C%22env%22%3A%20%22%22%2C%22version%22%3A%20%221.14.0%22%2C%22daysSinceRegistered%22%3A%20209%2C%22timezone%22%3A%208%2C%22%24os_version%22%3A%20%22Macintosh%3B%20Intel%20Mac%20OS%20X%2010_15_1%22%2C%22%24initial_referrer%22%3A%20%22http%3A%2F%2Fteambition.ximalaya.com%2Forganization%2F5ddbe348315c470001b21acd%22%2C%22%24initial_referring_domain%22%3A%20%22teambition.ximalaya.com%22%7D; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22170bcfa093850e-0ac1269b415407-396f7406-1296000-170bcfa0939b12%22%2C%22%24device_id%22%3A%22170bcfa093850e-0ac1269b415407-396f7406-1296000-170bcfa0939b12%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%7D; device_id=xm_1587538988435_k9azq36byhg80k; referral=%7B%22domain%22%3A%22teambition.ximalaya.com%22%2C%22path%22%3A%22%2Flogin%22%2C%22query%22%3A%22%3FappName%3DThoughts%26app_id%3D593770ff839632002e0358f1%26client_id%3D348c89c0-d676-11e7-9a28-f5188e3e8e62%26ref%22%2C%22hash%22%3A%22%22%7D; teambition_private_sid=eyJhdXRoVXBkYXRlZCI6MTU4OTE2MzMyNjc4MSwibG9naW5Gcm9tIjoidGVhbWJpdGlvbiIsInVpZCI6IjVjZDBlNzg0YmU4MjViMmIzZmI2OTIyZCIsInVzZXIiOnsiX2lkIjoiNWNkMGU3ODRiZTgyNWIyYjNmYjY5MjJkIiwibmFtZSI6IueHleWFhuiAgCIsImVtYWlsIjoiemhhb3lhby55YW5AeGltYWxheWEuY29tIiwiYXZhdGFyVXJsIjoiaHR0cDovL3RlYW1iaXRpb25maWxlLnhpbWFsYXlhLmNvbS90aHVtYm5haWwvMDExZ2E4YmViMTFmYTM1MDk1ZmJkNjNiOTJhNzUyMjRjMGJlL3cvMTAwL2gvMTAwIiwicmVnaW9uIjoiY24iLCJsYW5nIjoiIiwiaXNSb2JvdCI6ZmFsc2UsIm9wZW5JZCI6IiIsInBob25lRm9yTG9naW4iOiIifX0=; teambition_private_sid.sig=twaa4gcPOiOxenBwKDI6dRChiCw; 6&amp;remember_me=y; 6&amp;_token=45996&amp;D6E8744C237D47A884BBBB25A5E060AANdV316B4878A8E89F2A7B8A48A6FFBA502989159F148FD0CD074113D68C457088DA; 1&amp;_token=198122617&amp;C836D97A0B664E2A8E92FF65A7A3C24ANdV5DFD7014D2FC4B7E3A6D57DB870697E10B8570306FBAF129655D990BD2373793; s&amp;e=b03268eb590e059f9ecdb5902032b0c3; trackType=web; Hm_lvt_4a7d8ec50cfd6af753c4f8aee3425070=1589531041,1590122484,1590633369; fds_otp=6643535607046838463; 4&amp;remember_me=y; 4&amp;_token=311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB; 4_l_flag=311850&amp;8E70AEFA9F7D42ED882B82D316C415E0NdVB7D2C3F26B4DBA158C519B15DD77F2514D3296A15AEC88781ACA27E5668696AB_2020-05-2916:27:41; login_type=password_mobile; s&amp;a=%1C[XUT[%1E%05OR_%06^VB%09C%0E%08%07%08VBSL[XU%08S%1CTV[CSBTWRM%5CZOWXC; Hm_lpvt_4a7d8ec50cfd6af753c4f8aee3425070=1590740864; x_xmly_traffic=utm_source%3A%26utm_medium%3A%26utm_campaign%3A%26utm_content%3A%26utm_term%3A%26utm_from%3A </stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="用表格查看结果" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="汇总图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="响应时间图" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
