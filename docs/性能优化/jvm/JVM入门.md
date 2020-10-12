@@ -17,7 +17,9 @@
 ## 虚拟机自带的加载器
 
 > • 启动类加载器（Bootstrap）C++
+>
 > • 扩展类加载器（Extension）Java
+>
 > • 应用程序类加载器（AppClassLoader）
 > Java也叫系统类加载器，加载当前应用的classpath的所有类
 
