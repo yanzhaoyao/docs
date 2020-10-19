@@ -6,11 +6,11 @@
 
 步骤2：用jhat生成dump文件，文件后缀为hprof（dump文件后缀的用mat打不开）
 
-jmap -dump:format=b,file=/opt/tomcat6666.hprof 15837
+`sudo jmap -dump:format=b,file=/opt/tomcat6666.hprof 15837`
 
 下载到windows下：
 
-sz tomcat6666.hprof
+`sudo sz tomcat6666.hprof`
 
 步骤3：下载MAT
 
