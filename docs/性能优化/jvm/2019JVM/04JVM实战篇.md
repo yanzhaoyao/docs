@@ -34,9 +34,9 @@
 
 ```
 a.   Boolean 类型
-    格式：-XX：[+-]<name>          +或-表示启用或者禁用name属性
-    比如：-xx：+useconcMarksweepGC  表示启用CMS类型的垃圾回收器
-				 -xx：+useGlGC           表示启用G1类型的垃圾回收器
+    格式：-XX：[+-]<name>           +或-表示启用或者禁用name属性
+    比如：-xx：+UseConcMarksweepGC  表示启用CMS类型的垃圾回收器
+				 -xx：+useGlGC             表示启用G1类型的垃圾回收器
 b.   非Boolean类型
     格式：-XX<name>=<val ue>表示name属性的值是value
     比如：-XX：MaxGCPauseMillis=500
@@ -46,7 +46,7 @@ b.   非Boolean类型
 
 ```
 -XmslOOO 等价于 -xx:InitialHeapsize=1000
--Xmx1OOO 等价于 -XX:MaxHeapSi ze=1000 
+-Xmx1OOO 等价于 -XX:MaxHeapSize=1000 
 -Xss100  等价于 -XX:ThreadStackSize=100
 ```
 
@@ -122,7 +122,7 @@ b.   非Boolean类型
 | **参数**                                                     | **含义**                                                     | **说明**                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | -XX:CICompilerCount=3                                        | 最大并行编译数                                               | 如果设置大于1 ，虽然编译速度会提高，但是同样影响系   统稳定性，会增加JVM崩溃的可能 |
-| -XX:lni tialHeapSize=100M                                    | 初始化堆大小                                                 | 简写-XmslOOM                                                 |
+| -XX:lnitialHeapSize=100M                                     | 初始化堆大小                                                 | 简写-XmslOOM                                                 |
 | -XX:MaxHeapSize=100M                                         | 最大堆大小                                                   | 简写-XmxIOOM                                                 |
 | -XX:NewSize=20M                                              | 设置年轻代的大小                                             |                                                              |
 | -XX:MaxNewSize=50M                                           | 年轻代最大大小                                               |                                                              |
@@ -131,7 +131,7 @@ b.   非Boolean类型
 | -XX:MaxMetaspaceSize=50M                                     | 方法区最大大小                                               |                                                              |
 | -XX:+UseParallelGC                                           | 使用 UseParallelGC                                           | 新生代，吞吐量优先                                           |
 | -XX:+UseParallelOldGC                                        | 使用 UseParallelOldGC                                        | 老年代，吞吐量优先                                           |
-| -XX:+UseC on cMarkSweepGC                                    | 使用CMS                                                      | 老年代，停顿时间优先                                         |
+| -XX:+UseConcMarkSweepGC                                      | 使用CMS                                                      | 老年代，停顿时间优先                                         |
 | -XX:+UseG1GC                                                 | 使用G1GC                                                     | 新生代，老年代，停顿时间优先                                 |
 | -XX:NewRatio                                                 | 新老生代的比值                                               | 比如-XX:Ratio=4，贝U表示新生代:老年代=1:4，也就是新   生代占整个堆内存的1/5 |
 | -XX:SurvivorRatio                                            | 两个S区和Ede n区的比值                                       | 比如-XX:SurvivorRatio=8,也就是(S0+S1):Eden=2:8,  也就是一个S占整个新生代的1/10 |
@@ -143,13 +143,10 @@ b.   非Boolean类型
 | -XX:lnitiatingHeapOccupancyPercent                           | 启动并发GC周期时堆内存使用占比                               | G1之类的垃圾收集器用它来触发并发GC周期，基于整个堆   的使用率,而不只是某一代内存的使用比. 值为 0 贝表   示”一直执行GC循环".默认值为45. |
 | -XX:G1HeapWastePercent                                       | 允许的浪费堆空间的占比                                       | 默认是10%，如果并发标记可回收的空间小于10%,贝不  会触发MixedGC。 |
 | -XX:MaxGCPauseMillis=200ms                                   | G1 最大停顿时间                                              | 暂停时间不能太小，太小的话就会导致出现G1跟不上垃   圾产生的速度。最终退化成Full GC。所以对这个参数的  调优是一个持续的过程，逐步调整到最佳状态。 |
-| -XX:C on cGCThreads=n                                        | 并发垃圾收集器使用的线程数量                                 | 默认值随JVM运行的平台不同而不同                              |
+| -XX:ConcGCThreads=n                                          | 并发垃圾收集器使用的线程数量                                 | 默认值随JVM运行的平台不同而不同                              |
 | -XX:G1MixedGCLiveThresholdPercent=65                         | 混合垃圾回收周期中要包括的旧区域设置 占用率阈值              | 默认占用率为 65%                                             |
-| -XX:G1MixedGCCountTarget=8  r                                | 设置标记周期完成后,对存活数据上限为  G1MixedGCLlveThresholdPercent  的旧 区域执行混合垃圾回收的目标次数 | 默认8次混合垃圾回收，混合回收的目标是要控制在此目 标次数以内 |
+| -XX:G1MixedGCCountTarget=8                                   | 设置标记周期完成后,对存活数据上限为  G1MixedGCLlveThresholdPercent  的旧 区域执行混合垃圾回收的目标次数 | 默认8次混合垃圾回收，混合回收的目标是要控制在此目 标次数以内 |
 | XX:G1OldCSetRegionThresholdPercent=1                         | 描述Mixed GC时，Old Region被加入到 CSet 中                   | 默认情况下，G1只把10%的Old Region加入到CSet中                |
-|                                                              |                                                              |                                                              |
-
-
 
 ## 1.2 常用命令    
 
@@ -325,7 +322,7 @@ jmap -dump:format=b,file=heap.hprof 44808 ![101223221421016](https://tva1.sinaim
 
 ### 1.3.1   jconsole
 
-JConsole工具是JDK自带的可视化监控工具。查看java应用程序的运行概况、监控堆信息、永久区使用 情况、类加载情况等。
+JConsole工具是JDK自带的可视化监控工具。查看java应用程序的运行概况、监控堆信息、永久区使用情况、类加载情况等。
 
 > 命令行中输入：jconsole
 >
@@ -414,7 +411,7 @@ github :[ https://github.eom/alibaba/arthas](https://github.com/alibaba/arthas)
 
 Arthas allows developers to troubleshoot production issues for Java applications without modifying code or restarting servers.
 
-Ar thas是Alibaba开源的Java诊断工具，采用**命令行交互模式**，是排查jvm相关问题的利器。
+Arthas是Alibaba开源的Java诊断工具，采用**命令行交互模式**，是排查jvm相关问题的利器。
 
 Arthas是Alibaba开源的Java诊断工具，深受开发者喜爰。
 
@@ -434,7 +431,7 @@ Arthas是Alibaba开源的Java诊断工具，深受开发者喜爰。
 
 6. 怎么快速定位应用的热点，生成火焰图？
 
-Arthas支持JDK 6+,支扌寺Linux/Mac/Windows,采用命令行交互模式，同时提供丰富的Tab自动补全功能，进一步方便 进行问题的定位和诊断。
+Arthas支持JDK 6+,支持Linux/Mac/Windows,采用命令行交互模式，同时提供丰富的Tab自动补全功能，进一步方便 进行问题的定位和诊断。
 
 #### 1.3.3.1   下载安装
 
@@ -517,9 +514,9 @@ jmap -dump:format=b,file=heap.hprof 44808
 
 #### 1.3.4.3   使用
 
-- Histog ram
+- Histogram
 
-> Histog ram可以列出内存中的对象，对象的个数及其大小
+> Histogram可以列出内存中的对象，对象的个数及其大小
 >
 
 Class Name:类名称，java类名

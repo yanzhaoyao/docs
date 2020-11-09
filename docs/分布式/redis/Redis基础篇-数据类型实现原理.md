@@ -1,4 +1,4 @@
-# 1. 存储（实现）原理
+# 1. 数据类型实现原理
 
 ## 1.1. Redis 基本数据类型
 
@@ -1141,7 +1141,7 @@ id 为6001 的新闻点击数加1：zincrby hotNews:20190926 1 n6001
 
 <img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7xe24xm4zj30ci0ikjwe.jpg" alt="【课堂笔记】Redis基础篇_41_1" style="zoom:67%;" />
 
-### 1.26.其他数据结构简介
+### 1.26.其他数据类型简介
 
 https://redis.io/topics/data-types-intro
 
@@ -1208,15 +1208,17 @@ Hyperloglogs：提供了一种不太准确的基数统计方法，比如统计�
 
 ### 1.2.7.总结
 
-数据结构总结
+type和encoding对应关系表
 
-| 对象         | 对象type属性值 | type 命令输出 | 底层可能的存储结构                                    | object encoding             |
-| ------------ | -------------- | ------------- | ----------------------------------------------------- | --------------------------- |
-| 字符串对象   | OBJ_STRING     | "string"      | OBJ_ENCODING_INT OBJ_ENCODING_EMBSTR OBJ_ENCODING_RAW | int、embstr、raw            |
-| 列表对象     | OBJ_LIST       | "list"        | OBJ_ENCODING_QUICKLIST                                | quicklist                   |
-| 哈希对象     | OBJ_HASH       | "hash"        | OBJ_ENCODING_ZIPLIST OBJ_ENCODING_HT                  | ziplist、hashtable          |
-| 集合对象     | OBJ_SET        | "set"         | OBJ_ENCODING_INTSET OBJ_ENCODING_HT                   | intset、hashtable           |
-| 有序集合对象 | OBJ_ZSET       | "zset"        | OBJ_ENCODING_ZIPLIST OBJ_ENCODING_SKIPLIST            | ziplist、skiplist（包含ht） |
+![type和encoding对应关系表](https://tva1.sinaimg.cn/large/0081Kckwgy1gkfxtuct39j318e0i6afm.jpg)
+
+| 对象         | 对象type属性值 | type 命令输出 | 底层可能的存储结构                                    | object encoding                        |
+| ------------ | -------------- | ------------- | ----------------------------------------------------- | -------------------------------------- |
+| 字符串对象   | OBJ_STRING     | "string"      | OBJ_ENCODING_INT OBJ_ENCODING_EMBSTR OBJ_ENCODING_RAW | int、embstr、raw                       |
+| 哈希对象     | OBJ_HASH       | "hash"        | OBJ_ENCODING_ZIPLIST OBJ_ENCODING_HT                  | ziplist、hashtable                     |
+| 列表对象     | OBJ_LIST       | "list"        | OBJ_ENCODING_QUICKLIST                                | ziplist、linkedlist、(3.2后quicklist） |
+| 集合对象     | OBJ_SET        | "set"         | OBJ_ENCODING_INTSET OBJ_ENCODING_HT                   | intset、hashtable                      |
+| 有序集合对象 | OBJ_ZSET       | "zset"        | OBJ_ENCODING_ZIPLIST OBJ_ENCODING_SKIPLIST            | ziplist、skiplist（包含ht）            |
 
 ## 应用场景总结
 
