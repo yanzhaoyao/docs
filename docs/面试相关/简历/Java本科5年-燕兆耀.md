@@ -25,7 +25,7 @@
 ​	​	​	​	5年开发经验，其中近2年互联网项目经验，深入学习和使用 *Java* 语言以及相应的服务技能，对部分核心组件以及源码有过了解
 
    1. 熟悉常用的设计模式及反射、自定义注解、泛型等，熟练掌握Eclipse/IDEA、Git、Maven等开发及版本控制工具，熟练使用Astah、ProcessOn等工具绘制UML建模、时序图、架构图等
-   2. 熟悉Java内存结构、JMM内存模型、GC垃圾回收机制和JVM参数调优
+   2. 熟悉JMM内存模型、JVM内存结构、GC垃圾回收机制和JVM参数调优
    3. 熟练运用Spring、Mybatis、SpringBoot等开源框架，熟悉Spring的IOC、DI、AOP设计思想,熟练使用MySQL关系型数据库，Redis非关系型数据库，了解搜索服务框架Elasticsearch
    4. 熟悉SOA、分布式、微服务、DDD领域驱动开发、大型网站架构，熟悉RPC远程调用、Thrift、Dubbo、SpringCloud等RPC服务框架
    5. 熟悉SpringCloud常用组件、注册中心Eureka、Consul 、Nacos，负载均衡器Ribbon、客户端调用工具Rest和Feign，分布式配置中心Config、nacos和football等，服务保护Hystrix，网关Zuul，Api管理 Swagger，服务链路Zipkin等
