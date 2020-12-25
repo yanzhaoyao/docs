@@ -48,7 +48,7 @@ public interface IMobilePhone {
 ```java
 /**
  * @description
- * @auther yanzhoyao
+ * @auther yanzhaoyao
  * @date 2018/11/27 21:05
  */
 public class HUAWEI implements IMobilePhone {

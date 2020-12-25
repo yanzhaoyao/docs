@@ -8,7 +8,7 @@
 
 Predicate、Function、Consumer 、Supplier
 
-Stream  Optionnal
+Stream  Optional
 
 中间操作
 

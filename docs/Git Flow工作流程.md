@@ -288,3 +288,5 @@ git push
 -[what-is-version-control](https://www.atlassian.com/git/tutorials/what-is-version-control)
 
 -[gitflow-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+[Git常用命令及方法大全](https://www.cnblogs.com/miracle77hp/articles/11163532.html)

@@ -108,4 +108,4 @@ mysql>
 
 - 取值 **0** 每秒提交 Redo buffer --> Redo log OS cache -->flush cache to disk[可能丢失一秒内的事务数据]
 - 取值 **1** 默认值，每次事务提交执行Redo buffer --> Redo log OS cache --> flush cache to disk[最安全，性能最差的方式]
-- 取值 **2** 每次事务提交执行Redo buffer --> Redo log OS cache 再每一秒执行 --> flush cache to disk操作
+- 取值 **2** 每次事务提交执行Redo buffer --> Redo log OS cache 再每一秒执行 --> flush cache to disk操作 

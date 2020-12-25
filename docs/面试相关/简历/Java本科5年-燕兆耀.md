@@ -6,53 +6,54 @@
 
 ## 二、简历模板
 
-```
-# Java 软件工程师-求职简历
+https://www.mdnice.com/?outId=b9b73e95ede54684bbb3da1ba999067d
 
+```
    ## 个人信息
 
    **姓&nbsp;&nbsp;&nbsp;&nbsp;名**：燕兆耀&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**出生年月**：1994.08
-   <br>**性&nbsp;&nbsp;&nbsp;&nbsp;别**：男&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**工作年限**：5年
+   <br>**性&nbsp;&nbsp;&nbsp;&nbsp;别**：男&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**工作年限**：4年+
    <br>**学&nbsp;&nbsp;&nbsp;&nbsp;历**：本科 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;**联系电话**：15505516635
-   <br>**现居地址**：浦东川沙 &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;**通信邮箱**：15505516635@163.com
+   <br>**民&nbsp;&nbsp;&nbsp;&nbsp;族**：汉族 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;**通信邮箱**：15505516635@163.com
 
    ## 求职意向
 
-   **目标职能**：Java高级开发工程师&nbsp;&nbsp;&nbsp;&nbsp;**目标地点**：上海
-   <br>**工作性质**：全职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**到岗时间**：在职，考虑新机会，一个月内到岗
+   **目标职能**：Java高级开发工程师&nbsp;&nbsp;&nbsp;**目标地点**：上海
+   <br>**工作性质**：全职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**到岗时间**：在职，考虑新机会，一个月内到岗
 
    ## 技术栈
-​	​	​	​	5年开发经验，其中近2年互联网项目经验，深入学习和使用 *Java* 语言以及相应的服务技能，对部分核心组件以及源码有过了解
+​	​	​	​	近5年开发经验，其中近2年互联网项目经验，深入学习和使用 *Java* 语言以及相应的服务技能，对部分核心组件以及源码有过了解
 
-   1. 熟悉常用的设计模式及反射、自定义注解、泛型等，熟练掌握Eclipse/IDEA、Git、Maven等开发及版本控制工具，熟练使用Astah、ProcessOn等工具绘制UML建模、时序图、架构图等
-   2. 熟悉JMM内存模型、JVM内存结构、GC垃圾回收机制和JVM参数调优
-   3. 熟练运用Spring、Mybatis、SpringBoot等开源框架，熟悉Spring的IOC、DI、AOP设计思想,熟练使用MySQL关系型数据库，Redis非关系型数据库，了解搜索服务框架Elasticsearch
-   4. 熟悉SOA、分布式、微服务、DDD领域驱动开发、大型网站架构，熟悉RPC远程调用、Thrift、Dubbo、SpringCloud等RPC服务框架
-   5. 熟悉SpringCloud常用组件、注册中心Eureka、Consul 、Nacos，负载均衡器Ribbon、客户端调用工具Rest和Feign，分布式配置中心Config、nacos和football等，服务保护Hystrix，网关Zuul，Api管理 Swagger，服务链路Zipkin等
-   6. 熟练使用网络通讯协议, 熟悉netty底层实现原理，熟练使用json、xml通讯格式，熟悉常见消息中间ActiveMQ、RabbitMQ、Kafka 使用
-   7. 熟悉zookeeper、nginx等集群、高可用、高并发解决方案（服务降级、限流、熔断、隔离等）
-   8. 熟悉常见分布式和微服务解决方案（如：分布式任务调度、分布式服务链路追踪、分布式Session一致性问题、分布式锁解决方案、分布式事务解决方案、分布式日志收集ELK、分布式生成全局ID等）
-   9. 熟悉互联网安全架构平台设计，了解常见安全问题解决方案，例如XSS、SQL注入、CSRF、防盗链等，互联网API接口幂等设计、互联网API接口安全设计等
-   10. 了解Docker、Kubernetes、Service Mesh 等容器编排、微服务架构
+   1. 熟练掌握Eclipse/IDEA、Git、Maven等开发及版本控制工具，熟练使用Astah、ProcessOn等工具绘制UML建模、时序图、架构图等
+   2. Java 基础扎实，理解 io、多线程、集合等基础框架；熟悉常用的设计模式及反射、自定义注解、泛型等；对JVM有一定的了解，有实际调优经验
+   4. 熟练运用Spring、Mybatis、SpringBoot、SpringCloud等开源框架，熟悉Spring的IOC、DI、AOP设计思想
+   5. 熟练使用MySQL，Redis数据库，了解到它的原理和机制；了解搜索服务框架ElasticSearch
+   6. 熟悉SOA、分布式微服务，熟悉RPC远程调用，了解DDD领域驱动开发
+   7. 熟悉基本的linux命令，熟悉网络I/O通讯模型，了解netty框架及其实现原理
+   9. 熟悉常见消息中间件RabbitMQ、Kafka 的使用，了解其实现原理
+   10. 熟悉zookeeper、nginx等集群、高可用、高并发解决方案（服务降级、限流、熔断、隔离等）
+   11. 了解常见分布式和微服务解决方案（如：分布式Session一致性问题、分布式锁解决方案、分布式事务解决方案、分布式日志收集ELK、分布式生成全局ID等）
+   12. 了解Docker、Kubernetes容器化及服务编排
 
    ## 工作经验
 
-   - 2019年4月 - 至今&emsp;&emsp;&emsp;，上海喜马拉雅科技有限公司，Java后端工程师
-
-   - 2016年8月 - 2019年3月，上海维弘信息科技有限公司，Java开发工程师
+   - 2019年04月 - 至今&emsp;&emsp;&emsp;&emsp;，上海喜马拉雅科技有限公司，Java后端工程师
+      - 内容付费事业部，付费专辑相关业务的微服务开发
+   - 2016年08月 - 2019年03月，上海维弘信息科技有限公司，Java开发工程师
+      - 研发部，东方航空、浦东机场驻场开发，担任小组长，安排工作计划、分配工作内容等
 
    ## 项目经验
 
-   ### 项目一、内容付费资源权益集合服务
+   ### 项目一、内容付费资源权益服务
 
-   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Ignite+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Football+Nacos+Consul
-   - 系统架构：Spring Boot，DDD微服务架构，分布式部署，CQRS读写分离部署，Hera同城多活
+   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Ignite+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Nacos+Football
+   - 系统架构：Spring Boot，Mybatis，DDD微服务架构，CQRS分布式部署
    - 项目描述：该服务属于权益类服务（会员资源权益服务、用户资源权益服务、用户会员权益服务、平台资源权益服务、会员用户关系服务），该套服务提供喜马拉雅会员平台、用户平台的聚合等权益，对资源维度、用户维度、会员维度、专辑维度、商品维度、用户加资源维度等多个维度，支撑内容付费及商业化一体系的运作。
-        - 平台资源权益：资源维度；支持新品限免专辑和试听声音
+        - 平台资源权益：资源维度；支持试听专辑和试听声音
         - 会员资源权益：资源维度；支持会员资源查询，包括商品（专辑、声音）和非商品（福利、圈子等）
-        - upp（用户资源当前直接权益）：用户加资源维度；支持购买权益、限时免费听权益
+        - 用户资源当前直接权益：用户加资源维度；支持购买权益、限时免费听权益
         - 会员用户关系：用户维度；支持历史会员查询；
-        - 商品服务：商品维度；是否可售卖属性，关联会员专享权益；
+        - 商品服务：商品维度；是否可售卖属性，商品价格，售卖方式；
         - 专辑商品服务：专辑维度；支持主站专辑商品，包括会员专享、专辑价格等；
    - 工作职责：
      1. 负责平台资源权益、用户资源权益、专辑商品服务，需求迭代开发及维护，设计优化方案，提升系统性能。
@@ -60,7 +61,7 @@
      3. 日常与产品、运营开发，讨论需求，多了解业务上的基础建设系统。
   ### 项目二、付费权限服务
 
-   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Ignite+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Football+Nacos
+   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Ignite+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Nacos+Football
    - 系统架构：SSM，DDD微服务架构，分库分表，分布式部署
    - 项目描述：提供已购专辑、已购声音、专辑声音履约、专辑销量、账号合并，专辑补偿。
         - 已购专辑：专辑履约时，会添加用户购买的专辑信息，用户ID、购买时间，购买来源、订单号、商品ID等，按照用户ID分表。
@@ -70,35 +71,34 @@
    - 工作职责：
      1. 负责该服务维护与开发、需求迭代。
      2. 梳理产品文档与接口文档的更新，拆分部分功能，移交出去，处理相关接口对接工作。
-     3. 优化接口性能，减少线上报警，提升服务质量SLA。
+     3. 优化接口性能，减少线上报警，提升服务质量。
   ### 项目三、付费专辑授权、创建、审核服务
 
-   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Ignite+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Football+Nacos
+   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Nacos+Football
    - 系统架构：SSM，DDD微服务架构，分布式部署
    - 项目描述：本服务主要提供付费专辑的创建、查询、授权等接口，满足业务发展诉求。
         - 后台运营端，对用户（主播）授权，用户可通过主播工作台创建付费专辑。
         - 对外提供的统一标准创建付费专辑RPC写接口（付费商品）。
-        - 对外提供的统一标准读接口（付费商品），通过本地缓存提高高性能，QPS约为3W左右。
+        - 对外提供的统一标准读接口（付费商品），通过本地缓存提高高性能
         - 后台运营端，付费专辑的初审、复审、上架等流程，完成付费专辑的创建的完整生命周期。
    - 工作职责：
      1. 负责该服务维护与开发、需求评审、需求迭代。
      2. 梳理产品文档与接口文档的更新，处理相关接口对接工作。
-     3. 优化接口性能，减少线上报警，提升服务质量SLA。
+     3. 优化接口性能，减少线上报警，提升服务质量。
 
-   ### 项目四、大额红包分享裂变服务
+   ### 项目四、大额红包分享服务
 
-   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Football+Nacos+XDAL
+   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Redis+Thrift+Tomcat8.0+Git+Zookeeper+Nacos+Football
    - 系统架构：SSM，DDD微服务架构，分库分表，分布式部署
-   - 项目描述：用户购买专辑后，在支付完成页面，弹出大额红包。用户首次分享大额红包，可领取5喜点代金券 每份大额红包最多可被6位用户领取，红包发起者可领取自己分享的红包； 红包被领取完后，红包发起者可领取15喜点代金券的奖励；每个红包随机发放优惠券。
-        - 目的：通过分享红包优惠券的形式，吸引用户并购买，提高最终成交总额GMV。
-        - 服务QPS 在300左右
+   - 项目描述：用户购买专辑后，在支付完成页面，弹出大额红包。用户首次分享大额红包，可领取5喜点代金券，每份大额红包最多可被6位用户领取，红包发起者可领取自己分享的红包；红包被领取完后，红包发起者可领取15喜点代金券的奖励；每个红包随机发放优惠券。
+        - 目的：通过分享红包优惠券的形式，吸引用户并购买，提高最终成交总额。
    - 工作职责：
      1. 负责该服务的开发与设计、需求评审、需求迭代。
      2. 因迭代版本较多，历史需求及设计文档缺失或不统一，重新整理设计文档等。
 
    ### 项目五、津贴兑换服务
 
-   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Football+Nacos
+   - 开发环境：Idea+Mac+JDK1.8+Maven3.0+Mysql5.7+Redis+Thrift+Tomcat8.0+Git+RabbitMq+Zookeeper+Nacos+Football
    - 系统架构：SSM，DDD微服务架构，分布式部署
    - 项目描述：423主会场，活动期间，用户登录喜马拉雅、完成收听任务、电子书阅读、自分享好友助力，签到等形式，获取津贴。津贴可兑换限时付费专辑免费听、购买专辑抵扣、购买会员抵扣等，需求主要目的如下：
         - 津贴组件化，解放开发、产品人力，提高活动机动性
@@ -110,13 +110,13 @@
 
    ## 教育背景
 
-   | 2012.09~2016.07 | 本科 | 电子信息工程 | 安徽新华学院 |
+   | 2012.09~2016.07 | 统招本科 | 电子信息工程 | 安徽新华学院 |
 
    ## 个人评价
 
    1. 有较强的的学习和解决问题的能力，善于通过一些系统问题总结分析根本原因，热爱于技术挑战。
    2. 在工作中可以独立承担相关职责，可以较强承受工作压力并愿意不断的提升自我。
-   3. 性格开朗、积极乐观，可以精神饱满的投入到工作中。有着良好的团队协作能力和责任心，对工作有强烈的使命感。
+   3. 有着良好的团队协作能力和责任心，对工作有强烈的使命感。
    4. 想要长期从事软件开发行业，希望通过自己不断的努力来提升技术能力，并完成个人的职业发展计划。
 ```
 
